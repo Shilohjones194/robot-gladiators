@@ -114,7 +114,7 @@ var endGame = function () {
   window.alert("The game has now ended. Let's see how you did!");
 
   // if player is still alive, player wins!
-  if (playerHealth > 0) {
+  if (playerHealth >0) {
     window.alert("Great job, you've survived the game! You now have a score of " + playerMoney + '.');
   } else {
     window.alert("You've lost your robot in battle!");
@@ -130,7 +130,7 @@ var endGame = function () {
   }
 };
 
-// go to shop between battles function
+
 var shop = function () {
   // ask player what they'd like to do
   var shopOptionPrompt = window.prompt(
@@ -141,12 +141,12 @@ var shop = function () {
   switch (shopOptionPrompt) {
     case 'REFILL':
     case 'refill':
-      if (playerMoney >= 7) {
+      if (playerMoney >=7) {
         window.alert("Refilling player's health by 20 for 7 dollars.");
 
         // increase health and decrease money
-        playerHealth = playerHealth + 20;
-        playerMoney = playerMoney - 7;
+        playerHealth = playerHealth +20;
+        playerMoney = playerMoney -7;
       }
       else {
         window.alert("You don't have enough money!");
@@ -158,8 +158,8 @@ var shop = function () {
         window.alert("Upgrading player's attack by 6 for 7 dollars.");
 
         // increase attack and decrease money
-        playerAttack = playerAttack + 6;
-        playerMoney = playerMoney - 7;
+        playerAttack = playerAttack +6;
+        playerMoney = playerMoney -7;
       }
       else {
         window.alert("You don't have enough money!");
