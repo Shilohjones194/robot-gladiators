@@ -2,6 +2,7 @@ var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerAttack = 10;
+var playerMoney = 10;
 
 // You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth);
@@ -25,6 +26,19 @@ var fight = function () {
       playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
     );
 
+    // check enemy's health
+    if (enemyHealth <= 0) {
+      window.alert(enemyName + " has died!");
+    } else {
+      window.alert(enemyName + " still has " + enemyHealth + " health left.");
+    }
+
+    // remove player's health by subtracting the amount set in the enemyAttack variable
+    playerHealth = playerHealth - enemyAttack;
+    console.log(
+      enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+    );
+
     // check player's health
 
     if (playerHealth <= 0) {
@@ -38,6 +52,7 @@ var fight = function () {
   } else if (promptFight === "skip" || promptFight === "SKIP") {
     // confirm player wants to skip
     var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+    
 
     // if yes (true), leave fight
     if (confirmSkip) {
